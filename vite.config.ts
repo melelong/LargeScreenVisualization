@@ -11,5 +11,20 @@ export default defineConfig({
   },
   server: {
     hmr: true
-  }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(modulePath) {
+          if (modulePath.includes('node_modules')) {
+            // 将依赖的第三方库打包到单独的代码块中
+            return 'vendor';
+          } else if (modulePath.includes('src/components')) {
+            // 将 src/components 目录下的组件打包到单独的代码块中
+            return 'components';
+          }
+        },
+      },
+    },
+  },
 })
