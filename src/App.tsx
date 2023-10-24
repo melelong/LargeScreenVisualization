@@ -6,7 +6,7 @@ import MapChart from './components/MapChart.tsx';
 import VerticalBar from './components/VerticalBar.tsx';
 import RadiueBar from './components/RadiueBar.tsx';
 import WordCloud from './components/WordCloud.tsx';
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 import useData from './use/useData.ts';
 const App = defineComponent({
   setup() {
